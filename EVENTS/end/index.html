@@ -6,18 +6,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 
 <body>
-    <button id="color-btn">Change color</button>
+    Event bubbling
+
+    <div id="1">
+        ONE
+        <div id="2">
+            TWO
+            <div id="3">
+                THREE
+            </div>
+        </div>
+    </div>
+
     <script>
-        document.getElementById("color-btn").addEventListener("click", function (event) {
-            document.body.style.backgroundColor = "red";
+
+        document.getElementById("1").addEventListener("click", function (event) {
+            console.log(event.target);
         })
-        document.querySelector("body").addEventListener("click", function (event) {
-            console.log("click event  happened");
-        })
+
+
     </script>
+
 </body>
 
 </html>
